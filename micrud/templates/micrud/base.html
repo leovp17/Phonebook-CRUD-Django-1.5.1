@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>{% block title %}Untitled{% endblock %} | Phone Directory</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static "micrud/css/styles.css" %}" />
+  <link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{% static "micrud/css/font-awesome.min.css" %}" />
+  <script src="{% static "micrud/js/jquery-1.10.2.min.js" %}"></script>
+
+</head>
+<body>
+    <header>
+        <h1><i class="fa fa-book"></i> HireFront's Phonebook</h1>
+    </header>
+
+    <div id="content">
+        <nav>
+            <ul>
+                <li><a href="{% url 'micrud:people_list' %}">Contacts</a></li>
+                <li><a href="{% url 'micrud:category_list' %}">Categories</a></li>
+                <li><a href="{% url 'micrud:category_add' %}">Add Category</a></li>
+                <li><a href="{% url 'micrud:person_add' %}">Add Person</a></li>
+            </ul>
+        </nav>
+        {% block content %}
+        The end user should never ever see this!
+        {% endblock %}
+    </div>
+
+</body>
+</html>

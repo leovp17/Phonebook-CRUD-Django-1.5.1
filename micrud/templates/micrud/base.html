@@ -1,0 +1,13 @@
+<html>
+<head>
+  <title>{% block title %}Untitled{% endblock %} | Phone Directory</title>
+</head>
+<body>
+<h1>Phonebook CRUD example!</h1>
+<a href="{% url 'micrud:people_list' %}">Index</a> | <a href="{% url 'micrud:category_list' %}">Categories</a> | <a href="{% url 'micrud:category_add' %}">Add Category</a> | <a href="{% url 'micrud:person_add' %}">Add Person</a>
+<hr/>
+{% block content %}
+The end user should never ever see this!
+{% endblock %}
+</body>
+</html>

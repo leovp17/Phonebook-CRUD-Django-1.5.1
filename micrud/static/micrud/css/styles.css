@@ -1,0 +1,98 @@
+/***************************
+ * CSS Styles for PhoneBook
+ * +++++
+ * Google Fonts ::
+ * font-family: 'Montserrat Alternates', sans-serif;
+ * font-family: 'Open Sans', sans-serif;
+ * +++++
+ * General Styles
+ ***************************/
+ body {
+     background-color: #ffffff;
+     font-family: 'Open Sans', sans-serif;
+     margin: 0;
+     padding: 0;
+ }
+
+ h1 {
+     background-color: #1E5272;
+     border-bottom: 1px solid #163F59;
+     color:#ffffff;
+     font-family: 'Montserrat Alternates', sans-serif;
+     line-height: 100px;
+     margin: 0;
+     text-align: center;
+ }
+ h2 {
+     color:#1E5272;
+ }
+ p {
+     color:#163F59;
+ }
+ a {
+     color:#163F59;
+ }
+ a:hover {
+     color:#50483D;
+ }
+ nav ul, nav ul li {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+
+/***************************
+ * Menu
+ ***************************/
+ nav {
+     background-color: #e9e5e1;
+     border-right: 1px solid #dedad6;
+     float: left;
+     height: 100%;
+     overflow: hidden;
+     width: 30%;
+ }
+
+ nav ul li {
+     border-bottom: 1px solid #dedad6;
+ }
+
+ nav ul li a {
+     color:#50483D;
+     display: block;
+     line-height: 30px;
+     padding-left: 20px;
+     text-decoration: none;
+ }
+
+ nav ul li a:hover {
+     background-color:#50483D;
+     color:#ffffff;
+ }
+
+/***************************
+ * Content
+ ***************************/
+
+ div#content {
+     color:#163F59;
+     height: 86%;
+     min-width: 960px;
+     padding: 0;
+     width: 100%;
+ }
+ #content .table {
+     float: left;
+     display: table;
+     padding: 0 20px;
+     width: 65%;
+ }
+ #content .table .row {
+     display: table-row;
+     width: 100%;
+ }
+ #content .table .row .object,
+ #content .table .row .options {
+     display: table-cell;
+     width: 50%;
+ }

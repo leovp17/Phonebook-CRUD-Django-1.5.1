@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fa5041c-ebd3-4f4a-8b7c-209d33dc3481" name="Default" comment="" />
+    <list default="true" id="2fa5041c-ebd3-4f4a-8b7c-209d33dc3481" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="pruebasLeo.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,35 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/micrud/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="41" selection-start="2588" selection-end="2588" vertical-scroll-proportion="0.5672269" vertical-offset="855" max-vertical-offset="1335">
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micrud/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micrud/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="22" selection-start="1764" selection-end="1771" vertical-scroll-proportion="-36.0" vertical-offset="0" max-vertical-offset="1080">
-              <folding>
-                <element signature="e#0#46#0" expanded="true" />
-              </folding>
+            <state line="51" column="61" selection-start="1580" selection-end="1580" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,16 +39,7 @@
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="372" selection-end="391" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="285">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="object_form.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/object_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="14" selection-start="343" selection-end="343" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="255">
+            <state line="3" column="2" selection-start="91" selection-end="113" vertical-scroll-proportion="1.25" vertical-offset="75" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
@@ -77,16 +48,52 @@
       <file leaf-file-name="object_list.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/object_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="14" selection-start="414" selection-end="414" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="300">
+            <state line="5" column="8" selection-start="112" selection-end="115" vertical-scroll-proportion="-1.9166666" vertical-offset="29" max-vertical-offset="465">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="person_detail.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/person_detail.html">
+      <file leaf-file-name="functions.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/micrud/static/micrud/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="36" selection-start="637" selection-end="664" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="300">
+            <state line="48" column="59" selection-start="1421" selection-end="1421" vertical-scroll-proportion="0.76109934" vertical-offset="360" max-vertical-offset="900">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="object_form.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/object_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="21" selection-start="1192" selection-end="1201" vertical-scroll-proportion="-8.708333" vertical-offset="376" max-vertical-offset="945">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pruebasLeo/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="97" column="4" selection-start="3465" selection-end="3465" vertical-scroll-proportion="0.0" vertical-offset="1455" max-vertical-offset="2490">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/micrud/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="129" column="0" selection-start="3326" selection-end="3326" vertical-scroll-proportion="0.0" vertical-offset="1598" max-vertical-offset="2325">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pruebasLeo/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="4" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
               <folding />
             </state>
           </provider>
@@ -95,10 +102,17 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/micrud/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="6" selection-start="1120" selection-end="1121" vertical-scroll-proportion="-14.4" vertical-offset="0" max-vertical-offset="465">
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
+            <state line="19" column="54" selection-start="857" selection-end="868" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/micrud/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="70" selection-start="453" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,20 +124,38 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Leo Vega" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/pruebasLeo/settings.py" />
-        <option value="$PROJECT_DIR$/micrud/templates/micrud/object_confirm_delete.html" />
-        <option value="$PROJECT_DIR$/micrud/templates/micrud/person_detail.html" />
-        <option value="$PROJECT_DIR$/micrud/forms.py" />
-        <option value="$PROJECT_DIR$/pruebasLeo/urls.py" />
+        <option value="$PROJECT_DIR$/polls/templates/polls/index.html" />
+        <option value="$PROJECT_DIR$/polls/static/polls/js/ajaxfunction.js" />
+        <option value="$PROJECT_DIR$/micrud/static/micrud/js/jquery-1.10.2.min.js" />
+        <option value="/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/django/db/models/base.py" />
         <option value="$PROJECT_DIR$/micrud/urls.py" />
+        <option value="$PROJECT_DIR$/micrud/forms.py" />
+        <option value="$PROJECT_DIR$/micrud/templates/micrud/form.html" />
+        <option value="$PROJECT_DIR$/polls/templates/polls/detail.html" />
+        <option value="$PROJECT_DIR$/micrud/models.py" />
         <option value="$PROJECT_DIR$/micrud/templates/micrud/base.html" />
+        <option value="$PROJECT_DIR$/micrud/templates/micrud/object_list.html" />
+        <option value="$PROJECT_DIR$/pruebasLeo/settings.py" />
+        <option value="$PROJECT_DIR$/pruebasLeo/urls.py" />
         <option value="$PROJECT_DIR$/micrud/templates/micrud/object_form.html" />
         <option value="$PROJECT_DIR$/micrud/views.py" />
-        <option value="$PROJECT_DIR$/micrud/templates/micrud/object_list.html" />
-        <option value="$PROJECT_DIR$/micrud/models.py" />
+        <option value="$PROJECT_DIR$/micrud/static/micrud/js/functions.js" />
       </list>
     </option>
   </component>
@@ -132,7 +164,26 @@
     <option name="width" value="1440" />
     <option name="height" value="874" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyArgumentListInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -204,28 +255,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pruebasLeo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pruebasLeo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="micrud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="micrud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -234,7 +263,7 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="usage.statistics" />
+    <property name="options.lastSelected" value="appearance" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="options.searchVisible" value="true" />
@@ -243,10 +272,17 @@
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
-      <PyConsoleSettings>
+      <console-settings is-module-sdk="true">
         <option name="myUseModuleSdk" value="true" />
-      </PyConsoleSettings>
+      </console-settings>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/polls/static/polls/js" />
+      <recent name="$PROJECT_DIR$/polls/templates/polls" />
+      <recent name="$PROJECT_DIR$/colors/static/colors" />
+    </key>
   </component>
   <component name="RunManager" selected="Django server.pruebasLeo">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -461,33 +497,76 @@
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2fa5041c-ebd3-4f4a-8b7c-209d33dc3481" name="Default" comment="" />
       <created>1385667181775</created>
       <updated>1385667181775</updated>
     </task>
+    <task id="LOCAL-00001" summary="Micrud funcionando con Ajax">
+      <created>1386685959987</created>
+      <updated>1386685959987</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22015916" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2188329" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25107604" sideWeight="0.7015915" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39920425" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28694403" sideWeight="0.69496024" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3050398" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29840848" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29840848" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29840848" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32804233" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -500,132 +579,278 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Micrud funcionando con Ajax" />
+    <option name="LAST_COMMIT_MESSAGE" value="Micrud funcionando con Ajax" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="31" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>124</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>101</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>106</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>113</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>78</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>129</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>131</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>138</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>140</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>141</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>139</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>143</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>144</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>145</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>152</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>155</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/micrud/views.py</url>
+          <line>157</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/micrud/static/micrud/js/functions.js</url>
+          <line>20</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/micrud/static/micrud/js/functions.js</url>
+          <line>24</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/micrud/static/micrud/js/functions.js</url>
+          <line>23</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/micrud/static/micrud/js/functions.js</url>
+          <line>27</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/micrud/static/micrud/js/functions.js</url>
+          <line>29</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/micrud/static/micrud/js/functions.js</url>
+          <line>36</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/micrud/static/micrud/js/functions.js</url>
+          <line>10</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/micrud/static/micrud/js/functions.js</url>
+          <line>18</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="93" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/micrud/tests.py">
+    <entry file="file://$PROJECT_DIR$/polls/templates/polls/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="494">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="539">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/polls/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="539">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="23" selection-start="247" selection-end="263" vertical-scroll-proportion="0.19736843" vertical-offset="0" max-vertical-offset="456" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="503">
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/polls/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="54" selection-start="736" selection-end="742" vertical-scroll-proportion="-2.5" vertical-offset="225" max-vertical-offset="1350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="30" selection-start="2124" selection-end="2124" vertical-scroll-proportion="0.86654806" vertical-offset="458" max-vertical-offset="1050">
+          <folding>
+            <element signature="e#0#54#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pruebasLeo/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="11" selection-start="4528" selection-end="4534" vertical-scroll-proportion="0.50959486" vertical-offset="1651" max-vertical-offset="2445">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pruebasLeo/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.2153518" vertical-offset="101" max-vertical-offset="570">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micrud/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="469">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="469">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/object_confirm_delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="225">
-          <folding>
-            <marker date="1385673094000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/django/views/generic/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="4" selection-start="4001" selection-end="4001" vertical-scroll-proportion="0.0" vertical-offset="1426" max-vertical-offset="3075">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/object_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="14" selection-start="414" selection-end="414" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="300">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micrud/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="6" selection-start="1120" selection-end="1121" vertical-scroll-proportion="-14.4" vertical-offset="0" max-vertical-offset="465">
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pruebasLeo/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="61" selection-start="375" selection-end="381" vertical-scroll-proportion="0.3451883" vertical-offset="0" max-vertical-offset="478">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/object_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="14" selection-start="343" selection-end="343" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="372" selection-end="391" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="285">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micrud/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="22" selection-start="1764" selection-end="1771" vertical-scroll-proportion="-36.0" vertical-offset="0" max-vertical-offset="1080">
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micrud/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/person_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="36" selection-start="637" selection-end="664" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="300">
+        <state line="97" column="4" selection-start="3465" selection-end="3465" vertical-scroll-proportion="0.0" vertical-offset="1296" max-vertical-offset="2490">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/micrud/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="41" selection-start="2588" selection-end="2588" vertical-scroll-proportion="0.5672269" vertical-offset="855" max-vertical-offset="1335">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state line="51" column="61" selection-start="1580" selection-end="1580" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="2" selection-start="91" selection-end="113" vertical-scroll-proportion="1.25" vertical-offset="75" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micrud/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="70" selection-start="453" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pruebasLeo/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="4" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/object_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="8" selection-start="112" selection-end="115" vertical-scroll-proportion="-1.9166666" vertical-offset="29" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micrud/templates/micrud/object_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="21" selection-start="1192" selection-end="1201" vertical-scroll-proportion="-8.708333" vertical-offset="376" max-vertical-offset="945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micrud/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="54" selection-start="857" selection-end="868" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micrud/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="0" selection-start="3326" selection-end="3326" vertical-scroll-proportion="0.0" vertical-offset="1598" max-vertical-offset="2325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micrud/static/micrud/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="59" selection-start="1421" selection-end="1421" vertical-scroll-proportion="0.76109934" vertical-offset="360" max-vertical-offset="900">
+          <folding />
         </state>
       </provider>
     </entry>

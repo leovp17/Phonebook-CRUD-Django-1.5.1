@@ -3,6 +3,7 @@
 {% block title %}{{object_name}} Confirm delete?{% endblock %}
 
 {% block content %}
+<<<<<<< HEAD
 
     <div class="table">
 
@@ -17,4 +18,10 @@
     </div>
 
 
+=======
+<h3>Are you sure you want to delete {{object}}?</h3>
+<form action="" method="post">{% csrf_token %}
+<input type="submit" value="Yes!"/>  <input type="button" value="No..." onclick="window.history.go(-1);"/>
+</form>
+>>>>>>> Phonebook-CRUD-Django-1.5.1/master
 {% endblock %}

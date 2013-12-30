@@ -50,7 +50,7 @@ $(document).ready(function(){
 
             var urlContacts = $(location).attr('href'); // get the contact list url
 
-            $("#content .table").load("/micrud/ .table .row");
+            $("#content .table .table_container").load("/micrud/ .table .row");
 
         };
 

@@ -96,3 +96,7 @@
      display: table-cell;
      width: 50%;
  }
+ #content .table #contactForm {
+     overflow: hidden;
+     margin-bottom: 20px;
+ }

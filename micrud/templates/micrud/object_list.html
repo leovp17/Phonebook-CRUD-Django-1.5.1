@@ -4,19 +4,20 @@
 
 {% block content %}
     <div class="table">
+        <div class="table_container">
 
-
-        <div class="row">
-            <div class="object"><h2>{{object_name}}</h2></div>
-            <div class="options"><h2>Action</h2></div>
+            <div class="row">
+                <div class="object"><h2>{{object_name}}</h2></div>
+                <div class="options"><h2>Action</h2></div>
+            </div>
+            {% for object in object_list %}
+            <div class="row">
+                <div class="object"><a href="{{ object.get_absolute_url }}">{{object}}</a></div>
+                <div class="options"><a href="{{object.get_update_url}}">Update</a> | <a href="{{object.get_delete_url}}">Delete</a></div>
+            </div>
+            {% endfor %}
+            <div id="contactForm"></div>
         </div>
-        {% for object in object_list %}
-        <div class="row">
-            <div class="object"><a href="{{ object.get_absolute_url }}">{{object}}</a></div>
-            <div class="options"><a href="{{object.get_update_url}}">Update</a> | <a href="{{object.get_delete_url}}">Delete</a></div>
-        </div>
-        {% endfor %}
-        <div id="contactForm"></div>
         <a id="addContact" href="" data-form="/micrud/NewPersonAjax"><i class="fa fa-plus-circle"></i> Add new contact</a>
     </div>
 

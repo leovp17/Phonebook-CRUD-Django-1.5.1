@@ -1,3 +1,6 @@
+from django.contrib.auth.decorators import login_required
+from django.core.context_processors import csrf
+from django.forms.formsets import BaseFormSet, formset_factory
 from django.template.loader import render_to_string
 from django.template import RequestContext
 from django.views.generic.list import ListView
@@ -5,8 +8,9 @@ from micrud.models import Category, Person
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from micrud.forms import CategoryForm, PersonForm, PersonFormAjax
 from django.views.generic.detail import DetailView
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect, render_to_response
 from django.core.urlresolvers import reverse, reverse_lazy
+from .forms import BookForm
 
 import json
 
@@ -133,6 +137,7 @@ def enter(request):
 
         form = PersonFormAjax(request.POST)
         if form.is_valid():
+            jres['status'] = 'ok'
             form.save()
         else:
             try:
@@ -145,11 +150,6 @@ def enter(request):
                 jres['status'] = 'nok'
                 return HttpResponse(json.dumps(jres))
 
-
-
-
-
-
         return HttpResponse(json.dumps(jres))
 
     else:
@@ -158,4 +158,31 @@ def enter(request):
         jres['status'] = 'nok'
         return HttpResponse(json.dumps(jres))
 
+
+
+
+#adding multiple forms with formset
+def create_multiple_books(request, publisher_id):
+    class RequiredFormSet(BaseFormSet):
+        def __init__(self, *args, **kwargs):
+            super(RequiredFormSet, self).__init__(*args, **kwargs)
+            for form in self.forms:
+                form.empty_permitted = False
+
+    BookFormset = formset_factory(BookForm, max_num=10, formset=RequiredFormSet)
+    if request.method == 'POST':
+        book_formset = BookFormset(request.POST, request.FILES)
+        if book_formset.is_valid():
+            for form in book_formset.forms:
+                obj = form.save(commit=False)
+                obj.publisher_id = publisher_id
+                obj.save()
+            return redirect(reverse('created'))
+    else:
+        book_formset = BookFormset()
+    c = {'book_formset': book_formset,
+         'publisher_id':publisher_id,
+        }
+    c.update(csrf(request))
+    return render_to_response('micrud/template.html', c, context_instance=RequestContext(request))
 

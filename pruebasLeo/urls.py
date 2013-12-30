@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.views.generic import TemplateView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -13,6 +14,10 @@ urlpatterns = patterns('',
 
     url(r'^micrud/', include('micrud.urls', namespace="micrud")),
     url(r'^polls/', include('polls.urls', namespace="polls")),
+    url(r'^jformset/', include('jformset.urls', namespace="jformset")),
+    url(r'^recipes/', include('recipes.urls', namespace="recipes")),
+
+
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url, include
 from micrud.views import PeopleList, ViewPerson, NewPerson, KillPerson,\
     EditPerson, ViewCategory, EditCategory, DeleteCategory, CategoryDetail,\
-    NewCategory, CategoryList, NewPersonAjax
+    NewCategory, CategoryList, NewPersonAjax, create_multiple_books
 
 person_urls = patterns('',
     url(r'^$', ViewPerson.as_view(), name='person_detail'),
@@ -24,4 +24,5 @@ urlpatterns = patterns('',
     url(r'^(?P<slug>[\w-]+).cat/', include(category_urls)),
     url(r'^NewCategory$', NewCategory.as_view(), name='category_add'),
     url(r'^NewPersonAjax$', NewPersonAjax.as_view(), name='person_add_ajax'),
+    url(r'^create_multiple_books$', create_multiple_books, name='create_multiple_books'),
 )

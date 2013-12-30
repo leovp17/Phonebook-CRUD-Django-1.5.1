@@ -25,12 +25,16 @@ $(document).ready(function(){
                     console.log(data.data);
                     if (data.status=="novalido")
                     {
+                        console.log("presenta problemas")
                         $("#contactForm").html(data.data);
                     }
-                    console.log("bien")
-                    $("#contactForm").remove();
-
-                    reloadContacts();
+                    else if (data.status=="ok")
+                    {
+                        console.log("bien")
+                        $("#contactForm").remove();
+                        reloadContacts();
+                    }
+                    return false;
                 },
 
                 error: function() { // on error..

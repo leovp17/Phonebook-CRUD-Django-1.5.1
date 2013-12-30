@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.contenttypes import generic
 from django.template.defaultfilters import slugify
 from django.contrib.localflavor.us.models import PhoneNumberField
 
@@ -19,15 +20,15 @@ class Category(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('micrud:category_detail', [str(self.slug)])
+        return 'micrud:category_detail', [str(self.slug)]
 
     @models.permalink
     def get_update_url(self):
-        return ('micrud:category_update', [str(self.slug)])
+        return 'micrud:category_update', [str(self.slug)]
 
     @models.permalink
     def get_delete_url(self):
-        return ('micrud:category_delete', [str(self.slug)])
+        return 'micrud:category_delete', [str(self.slug)]
 
 
 class Person(models.Model):
@@ -73,12 +74,23 @@ class Person(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('micrud:person_detail', [str(self.slug)])
+        return 'micrud:person_detail', [str(self.slug)]
 
     @models.permalink
     def get_update_url(self):
-        return ('micrud:person_update', [str(self.slug)])
+        return 'micrud:person_update', [str(self.slug)]
 
     @models.permalink
     def get_delete_url(self):
-        return ('micrud:person_delete', [str(self.slug)])
+        return 'micrud:person_delete', [str(self.slug)]
+
+
+#adding multiple forms with formset
+class Publisher(models.Model):
+    name = models.CharField(max_length=255)
+
+class Book(models.Model):
+    name = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    generic = generic.GenericForeignKey()
+    publisher_id = models.PositiveIntegerField()

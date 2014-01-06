@@ -2,14 +2,21 @@
 <html>
 <head>
     <title>Multiformset Demo</title>
+
 </head>
 
 <body>
     <div>
         <h1>Recipes</h1>
         {% for object in object_list %}
-            {{ object }}
+            <div><a href="{{ object.get_absolute_url}}">{{ object.title }}</a></div>
+            <div><p>{{ object.description }}</p></div>
         {% endfor %}
     </div>
+    <a href="" class="add-recipe" data-form="/recipes/AddRecipe">Add Recipe</a>
+    <div id="recipeForm"></div>
+
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.1.10.2.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
 </body>
 </html>

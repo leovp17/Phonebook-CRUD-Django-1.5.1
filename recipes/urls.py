@@ -1,6 +1,6 @@
 #urls.py
 from django.conf.urls import patterns, url
-from recipes.views import RecipeCreateView, RecipeList
+from recipes.views import RecipeCreateView, RecipeList, show_edu
 
 urlpatterns = patterns('',
     url(r'^$', RecipeList.as_view(), name='RecipeList'),

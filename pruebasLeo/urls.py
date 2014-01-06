@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 from micrud.views import enter
+from recipes.views import show_edu
 
 admin.autodiscover()
 
@@ -25,4 +26,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^enter/', enter),
+
+    url(r'^show_edu/', show_edu),
 )

@@ -83,14 +83,3 @@ class Person(models.Model):
     @models.permalink
     def get_delete_url(self):
         return 'micrud:person_delete', [str(self.slug)]
-
-
-#adding multiple forms with formset
-class Publisher(models.Model):
-    name = models.CharField(max_length=255)
-
-class Book(models.Model):
-    name = models.CharField(max_length=255)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    generic = generic.GenericForeignKey()
-    publisher_id = models.PositiveIntegerField()

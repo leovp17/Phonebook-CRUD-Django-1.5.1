@@ -6,6 +6,7 @@ class Recipe(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
 
+
 class Ingredient(models.Model):
     recipe = models.ForeignKey(Recipe)
     description = models.CharField(max_length=255)

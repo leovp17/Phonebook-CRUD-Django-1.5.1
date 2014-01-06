@@ -1,5 +1,8 @@
 # views.py
-from django.http import HttpResponseRedirect
+import json
+from django.http import HttpResponseRedirect, HttpResponse
+from django.template import RequestContext
+from django.template.loader import render_to_string
 from django.views.generic import CreateView
 from django.views.generic.list import ListView
 
@@ -11,7 +14,7 @@ class RecipeCreateView(CreateView):
     template_name = 'recipes/recipe_add.html'
     model = Recipe
     form_class = RecipeForm
-    success_url = 'success'
+    success_url = '/recipes/'
 
     def get(self, request, *args, **kwargs):
         """
@@ -68,5 +71,32 @@ class RecipeCreateView(CreateView):
                                   ingredient_form=ingredient_form,
                                   instruction_form=instruction_form))
 
-class RecipeList(RecipeCreateView, ListView):
+
+class RecipeMixin(object):
+    model = Recipe
+
+    def get_context_data(self, **kwargs):
+        kwargs.update({'object_name': 'Recipe'})
+        return kwargs
+
+
+class RecipeList(RecipeMixin, ListView):
     template_name = 'recipes/recipes.html'
+
+def show_edu(request):
+
+    if request.is_ajax():
+        jres = {}
+        jres['ok'] = "ok"
+
+        salida = render_to_string('recipes/recipe_add.html', locals(), RequestContext(request))
+        jres['data'] = salida
+        jres['status'] = 'ok'
+
+        return HttpResponse(json.dumps(jres))
+
+    else:
+        jres = {}
+
+        jres['status'] = 'nok'
+        return HttpResponse(json.dumps(jres))

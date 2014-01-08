@@ -8,7 +8,7 @@
 <body>
     <div>
         <p>Se despliega la lista de recetas.</p>
-        <h1>Recipes</h1>
+        <h1>Recetas</h1>
         <div id="recetas">
         {% for object in object_list %}
             <div class="receta">
@@ -18,8 +18,8 @@
         {% endfor %}
         </div>
     </div>
-    <p><code>Add Recipe</code> lo que hace es traer el formulario que se encuentra en <code>/recipes/AddRecipe</code> y lo inserta en el elemento <code>#recipeForm</code>.</p>
-    <a href="" class="add-recipe" data-form="/recipes/AddRecipe">Add Recipe</a>
+    <p><code>Agregar receta</code> lo que hace es traer el formulario que se encuentra en <code>/recipes/AddRecipe</code> y lo inserta en el elemento <code>#recipeForm</code>.</p>
+    <a href="" class="add-recipe" data-form="/recipes/AddRecipe">Agregar Receta</a>
     <div id="recipeForm"></div>
 
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.1.10.2.js"></script>

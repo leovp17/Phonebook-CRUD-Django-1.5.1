@@ -16,7 +16,7 @@ $(document).ready(function(){
 
             dataType: "json",
 
-            url: "/enterRecipe/",
+            url: $(this).attr('action'),
 
             data: $(this).serialize(),
 

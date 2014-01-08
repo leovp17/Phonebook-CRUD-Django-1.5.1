@@ -17,11 +17,12 @@
 </head>
 
 <body>
-    <p class="headline">Desde la pagina de <code>/recipe/AddRecipe</code> el formulario trabaja de la forma tradicional, llevando al usuario a un success page, en este caso <code>/recipes/</code></p>
-    <p class="headline">Desde la página de <code>/recipe/</code> el formulario trabajará via ajax, enviando la información por detras y refrescando la lista de recetas, sin necesidad de recargar la página.</p>
-
     <div id="recipeformulario">
-        <h1>Add Recipe</h1>
+        <p class="headline">Desde la pagina de <code>/recipe/AddRecipe</code> el formulario trabaja de la forma tradicional, llevando al usuario a un success page, en este caso <code>/recipes/</code></p>
+        <p class="headline">Desde la página de <code>/recipe/</code> el formulario trabajará via ajax, enviando la información por detras y refrescando la lista de recetas, sin necesidad de recargar la página.</p>
+
+
+        <h1>Agregar Receta</h1>
         <p>El formulario consiste en: crear una receta que cuenta con un titulo y una descripción, a la cual tambien se le ligan dos formularios mas, uno de ingredientes y otro con las instrucciones.</p>
         <form action="/enterRecipe/" method="post">
             {% csrf_token %}
@@ -29,7 +30,7 @@
                 {{ form.as_p }}
             </div>
             <fieldset>
-                <legend>Recipe Ingredient</legend>
+                <legend>Ingrediente de la receta</legend>
                 {{ ingredient_form.management_form }}
                 {{ ingredient_form.non_form_errors }}
                 {% for form in ingredient_form %}
@@ -42,7 +43,7 @@
                 {% endfor %}
             </fieldset>
             <fieldset>
-                <legend>Recipe instruction</legend>
+                <legend>Instrucciones de la receta</legend>
                 {{ instruction_form.management_form }}
                 {{ instruction_form.non_form_errors }}
                 {% for form in instruction_form %}
@@ -57,7 +58,7 @@
                     </div>
                 {% endfor %}
             </fieldset>
-            <input type="submit" value="Add recipe" class="submit" />
+            <input type="submit" value="Agregar receta" class="submit" />
         </form>
     </div>
 

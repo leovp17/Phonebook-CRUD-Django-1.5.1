@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ object.title }} Recipe</title>
+    <title>Receta {{ object.title }}</title>
 
 </head>
 
 <body>
     <div>
         <p>Aqui se ve el detalle de la receta.</p>
-        <h1>{{ object.title }} Recipe</h1>
+        <h1>Receta {{ recetas.title }}</h1>
+        <h2>{{ recetas.description }}</h2>
         <div class="receta">
-            <h2>Ingredients</h2>
+            <h3>Ingredientes</h3>
             <ul>
-                <li></li>
+            {% for i in ingredientes %}
+                <li>{{ i.description }}</li>
+            {% endfor %}
+            </ul>
+            <h3>Instrucciones</h3>
+            <ul>
+            {% for i in instruction %}
+                <li>{{ i.number }} - {{ i.description }}</li>
+            {% endfor %}
             </ul>
         </div>
     </div>
-    <a href="" class="add-recipe" data-form="/recipes/AddRecipe">Add Recipe</a>
-    <div id="recipeForm"></div>
-
+<a href="{% url 'recipes:RecipeList' %}">Volver a la lista de recetas</a>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.1.10.2.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
 </body>

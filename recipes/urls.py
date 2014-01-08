@@ -3,7 +3,7 @@ from django.conf.urls import patterns, url, include
 from recipes.views import RecipeCreateView, RecipeList, RecipeDetail
 
 recipe_urls = patterns('',
-    url(r'^$', RecipeDetail.as_view(), name='RecipeDetail'),
+    url(r'^$', RecipeDetail, name='RecipeDetail'),
 )
 
 urlpatterns = patterns('',

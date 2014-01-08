@@ -128,7 +128,6 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'micrud',
     'polls',
-    'jformset',
     'recipes',
 )
 

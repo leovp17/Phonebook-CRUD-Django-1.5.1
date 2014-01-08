@@ -7,12 +7,18 @@
 
 <body>
     <div>
+        <p>Se despliega la lista de recetas.</p>
         <h1>Recipes</h1>
+        <div id="recetas">
         {% for object in object_list %}
-            <div><a href="{{ object.get_absolute_url}}">{{ object.title }}</a></div>
-            <div><p>{{ object.description }}</p></div>
+            <div class="receta">
+                <div><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></div>
+                <div><p>{{ object.description }}</p></div>
+            </div>
         {% endfor %}
+        </div>
     </div>
+    <p><code>Add Recipe</code> lo que hace es traer el formulario que se encuentra en <code>/recipes/AddRecipe</code> y lo inserta en el elemento <code>#recipeForm</code>.</p>
     <a href="" class="add-recipe" data-form="/recipes/AddRecipe">Add Recipe</a>
     <div id="recipeForm"></div>
 

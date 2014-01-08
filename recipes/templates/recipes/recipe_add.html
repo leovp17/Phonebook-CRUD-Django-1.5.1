@@ -7,19 +7,23 @@
     <script type="text/javascript">
         $(function() {
             $(".inline.{{ ingredient_form.prefix }}").formset({
-                prefix: "{{ ingredient_form.prefix }}",
+                prefix: "{{ ingredient_form.prefix }}"
             })
             $(".inline.{{ instruction_form.prefix }}").formset({
-                prefix: "{{ instruction_form.prefix }}",
+                prefix: "{{ instruction_form.prefix }}"
             })
         })
     </script>
 </head>
 
 <body>
-    <div>
+    <p class="headline">Desde la pagina de <code>/recipe/AddRecipe</code> el formulario trabaja de la forma tradicional, llevando al usuario a un success page, en este caso <code>/recipes/</code></p>
+    <p class="headline">Desde la página de <code>/recipe/</code> el formulario trabajará via ajax, enviando la información por detras y refrescando la lista de recetas, sin necesidad de recargar la página.</p>
+
+    <div id="recipeformulario">
         <h1>Add Recipe</h1>
-        <form method="post">
+        <p>El formulario consiste en: crear una receta que cuenta con un titulo y una descripción, a la cual tambien se le ligan dos formularios mas, uno de ingredientes y otro con las instrucciones.</p>
+        <form action="/enterRecipe/" method="post">
             {% csrf_token %}
             <div>
                 {{ form.as_p }}
@@ -56,5 +60,42 @@
             <input type="submit" value="Add recipe" class="submit" />
         </form>
     </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        var csrftoken = getCookie('csrftoken');
+
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+        $.ajaxSetup({
+            crossDomain: false, // obviates need for sameOrigin test
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type)) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+    });
+</script>
 </body>
 </html>

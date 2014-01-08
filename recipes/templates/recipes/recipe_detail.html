@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ object.title }} Recipe</title>
+
+</head>
+
+<body>
+    <div>
+        <p>Aqui se ve el detalle de la receta.</p>
+        <h1>{{ object.title }} Recipe</h1>
+        <div class="receta">
+            <h2>Ingredients</h2>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <a href="" class="add-recipe" data-form="/recipes/AddRecipe">Add Recipe</a>
+    <div id="recipeForm"></div>
+
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.1.10.2.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
+</body>
+</html>

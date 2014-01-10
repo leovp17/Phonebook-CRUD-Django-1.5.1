@@ -18,6 +18,12 @@ class Recipe(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return 'recipes:RecipeDetail', [str(self.slug)]
+    @models.permalink
+    def get_update_url(self):
+        return 'recipes:RecetaUpdate', [str(self.slug)]
+    @models.permalink
+    def get_success_url(self):
+        return 'recipes', [str(self)]
 
 #todo LV Aqui se construyen los formulario secundarios, que se dependeran del padre.
 class Ingredient(models.Model):

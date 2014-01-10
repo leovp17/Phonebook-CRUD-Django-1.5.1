@@ -4,12 +4,64 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.template.loader import render_to_string
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 from django.views.generic.list import ListView
-from django.views.generic.detail import DetailView
+from extra_views import InlineFormSet, CreateWithInlinesView, UpdateWithInlinesView, InlineFormSetView
 
 from .forms import IngredientFormSet, InstructionFormSet, RecipeForm
 from .models import Recipe, Ingredient, Instruction
+
+"""
+    Django-extra-views
+    DOCS: http://django-extra-views.readthedocs.org/en/latest/views.html
+"""
+class IngredientInline(InlineFormSet):
+    model = Ingredient
+    """
+        Por default el inlineFormSet agrega dos campos[extra] del formulario.
+    """
+    extra = 1
+
+
+class InstructionInline(InlineFormSet):
+    model = Instruction
+    extra = 1
+
+
+class RecetaCreateView(CreateWithInlinesView):
+    template_name = 'recipes/receta_add.html'
+    model = Recipe
+    inlines = [IngredientInline, InstructionInline]
+
+    def get_success_url(self):
+        return self.object.get_absolute_url()
+
+
+class RecetaUpdateView(UpdateWithInlinesView):
+    template_name = 'recipes/receta_add.html'
+    model = Recipe
+    form_class = RecipeForm
+    inlines = [IngredientInline, InstructionInline]
+
+    def get_success_url(self):
+        return self.object.get_absolute_url()
+
+
+class RecetaDetailView(InlineFormSetView):
+    model = Recipe
+    inlines = [IngredientInline, InstructionInline]
+
+    def get_queryset(self):
+        slug = self.kwargs['slug']
+        return super(RecetaDetailView, self).get_queryset().filter(slug=slug)
+
+
+
+
+
+
+
+
 
 #todo LV En este view se utiliza para desplegar el formulario, usando la forma tradicional, una pagina para el form con un success url.
 class RecipeCreateView(CreateView):
@@ -73,13 +125,30 @@ class RecipeCreateView(CreateView):
                                   ingredient_form=ingredient_form,
                                   instruction_form=instruction_form))
 
-#todo LV Estos mixin se empiezan usar para trabajar con las vistas genericas, en este caso lo que capturamos son las diferentes recetas almacenadas en la base de datos
+
 class RecipeMixin(object):
     model = Recipe
+    ingredient_form = IngredientFormSet()
+    instruction_form = InstructionFormSet()
 
     def get_context_data(self, **kwargs):
-         kwargs.update({'object_name': 'Recipe'})
-         return kwargs
+        kwargs.update({'object_name': 'Receta'})
+        return kwargs
+
+
+class RecipeFormMixin(RecipeMixin):
+    form_class = RecipeForm
+    ingredient_form = IngredientFormSet()
+    instruction_form = InstructionFormSet()
+    template_name = 'recipes/recipe_add.html'
+
+
+class RecipeUpdate(RecipeFormMixin, UpdateView):
+    pass
+
+
+#todo LV Estos mixin se empiezan usar para trabajar con las vistas genericas, en este caso lo que capturamos son las diferentes recetas almacenadas en la base de datos
+
 
 
 class RecipeList(RecipeMixin, ListView):

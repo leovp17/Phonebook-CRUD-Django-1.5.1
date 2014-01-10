@@ -12,9 +12,10 @@
         <div id="recetas">
         {% for object in object_list %}
             <div class="receta">
-                <div><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></div>
+                <div><a href="{{ object.get_absolute_url }}">{{ object.title }}</a> | <a href="{{object.get_update_url}}">Editar</a></div>
                 <div><p>{{ object.description }}</p></div>
             </div>
+
         {% endfor %}
         </div>
     </div>

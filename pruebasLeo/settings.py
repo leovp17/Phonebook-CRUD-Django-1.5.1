@@ -129,6 +129,7 @@ INSTALLED_APPS = (
     'micrud',
     'polls',
     'recipes',
+    'extra_views',
 )
 
 # A sample logging configuration. The only tangible logging

@@ -2,12 +2,14 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
+
 #todo LV Aqui se construye el formulario principal, padre.
 class Recipe(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     slug = models.SlugField(blank=True)
-
+    action_on_save = models.BooleanField(default=False)
+"""
     def __unicode__(self):
         return u"%s" % self.title
 
@@ -24,6 +26,8 @@ class Recipe(models.Model):
     @models.permalink
     def get_success_url(self):
         return 'recipes', [str(self)]
+"""
+
 
 #todo LV Aqui se construyen los formulario secundarios, que se dependeran del padre.
 class Ingredient(models.Model):

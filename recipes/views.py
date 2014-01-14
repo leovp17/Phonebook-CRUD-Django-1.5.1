@@ -6,54 +6,85 @@ from django.template import RequestContext
 from django.template.loader import render_to_string
 from django.views.generic import CreateView, UpdateView
 from django.views.generic.list import ListView
-from extra_views import InlineFormSet, CreateWithInlinesView, UpdateWithInlinesView, InlineFormSetView
+from extra_views import InlineFormSet, CreateWithInlinesView, UpdateWithInlinesView, InlineFormSetView, \
+    NamedFormsetsMixin
 
 from .forms import IngredientFormSet, InstructionFormSet, RecipeForm
 from .models import Recipe, Ingredient, Instruction
+
 
 """
     Django-extra-views
     DOCS: http://django-extra-views.readthedocs.org/en/latest/views.html
 """
+
+
+class RecetaFormSetView(InlineFormSetView):
+    model = Recipe
+    inline_model = Ingredient
+    template_name = "recipes/receta_inline_formset.html"
+
+
 class IngredientInline(InlineFormSet):
     model = Ingredient
     """
         Por default el inlineFormSet agrega dos campos[extra] del formulario.
     """
     extra = 1
+    max_num = None
+    can_delete = True
 
 
 class InstructionInline(InlineFormSet):
     model = Instruction
     extra = 1
+    max_num = None
+    can_delete = True
 
 
 class RecetaCreateView(CreateWithInlinesView):
-    template_name = 'recipes/receta_add.html'
     model = Recipe
     inlines = [IngredientInline, InstructionInline]
+    template_name = 'recipes/receta_add.html'
 
     def get_success_url(self):
-        return self.object.get_absolute_url()
+        return '../%i' % self.object.pk
+
+
+class RecetaCreateNamedView(NamedFormsetsMixin, RecetaCreateView):
+    inlines_names = ['ingredientes','instrucciones']
+    template_name = 'recipes/receta_add_namedFormsets.html'
 
 
 class RecetaUpdateView(UpdateWithInlinesView):
-    template_name = 'recipes/receta_add.html'
     model = Recipe
     form_class = RecipeForm
     inlines = [IngredientInline, InstructionInline]
+    template_name = 'recipes/receta_add.html'
 
     def get_success_url(self):
-        return self.object.get_absolute_url()
+        return '../../%i' % self.object.pk
 
 
-class RecetaDetailView(InlineFormSetView):
-    model = Recipe
-    inlines = [IngredientInline, InstructionInline]
+class RecetaUpdateNamedView(NamedFormsetsMixin, RecetaUpdateView):
+    inlines_names = ['ingredientes','instrucciones']
+    template_name = 'recipes/receta_add_namedFormsets.html'
 
-    def get_queryset(self):
-        slug = self.kwargs['slug']
-        return super(RecetaDetailView, self).get_queryset().filter(slug=slug)
+    def get_success_url(self):
+        return '../../%i' % self.object.pk
+
+    #def get_success_url(self):
+        #return self.object.get_absolute_url()
+
+
+
+
+
+
+
+
+
+
 
 
 

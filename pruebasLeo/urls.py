@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^micrud/', include('micrud.urls', namespace="micrud")),
     url(r'^polls/', include('polls.urls', namespace="polls")),
     url(r'^recipes/', include('recipes.urls', namespace="recipes")),
+    url(r'^extraviews/', include('extra_views.tests.urls', namespace="extraviews")),
 
 
 

@@ -18,9 +18,20 @@
                 {{ form }}
             </div>
             <fieldset>
-            {% for formset in inlines %}
+            {{ ingredientes.management_form }}
+            {% for formset in ingredientes %}
 
-                <div class="inline {{ formset.prefix }}">
+                <div class="inlineIngredientes {{ formset.prefix }}">
+                    {{ formset }}
+                </div>
+            {% endfor %}
+            </fieldset>
+
+            <fieldset>
+            {{ instrucciones.management_form }}
+            {% for formset in instrucciones %}
+
+                <div class="inlineInstrucciones {{ formset.prefix }}">
                     {{ formset }}
                 </div>
             {% endfor %}
@@ -29,12 +40,18 @@
             <input type="submit" value="agregar" />
         </form>
     </div>
+
 <script src="{{ STATIC_URL }}js/jquery.1.10.2.js"></script>
 <script src="{{ STATIC_URL }}js/jquery.formset.js"></script>
 <script type="text/javascript">
     $(function() {
-        $('.inline').formset({
-            prefix: '{{ inlines.prefix }}'
+        $('.inlineIngredientes').formset({
+            prefix: '{{ ingredientes.prefix }}',
+            addText: 'Agregar campo'
+        });
+        $('.inlineInstrucciones').formset({
+            prefix: '{{ instrucciones.prefix }}',
+            addText: 'Agregar campo'
         });
     })
 </script>

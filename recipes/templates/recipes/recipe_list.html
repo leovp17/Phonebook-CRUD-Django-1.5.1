@@ -8,11 +8,11 @@
 <body>
     <div>
         <p>Se despliega la lista de recetas.</p>
-        <h1>Recetas</h1>
-        <div id="recetas">
+        <h1>{{object_name}}</h1>
+        <div id="recetas" style="float:left; margin-right: 50px;">
         {% for object in object_list %}
             <div class="receta">
-                <div><a href="{{ object.get_absolute_url }}">{{ object.title }}</a> | <a href="{{object.get_update_url}}">Editar</a></div>
+                <div><a href="RecetaDetail/{{ object.slug }}/">{{ object.title }}</a> | <a href="" data-form="/recipes/RecetaUpdateNamed/{{ object.slug }}" class="add-recipe2">Editar</a></div>
                 <div><p>{{ object.description }}</p></div>
             </div>
 
@@ -20,10 +20,11 @@
         </div>
     </div>
     <p><code>Agregar receta</code> lo que hace es traer el formulario que se encuentra en <code>/recipes/AddRecipe</code> y lo inserta en el elemento <code>#recipeForm</code>.</p>
-    <a href="/recipes/RecetaCreate/" class="add-recipe">Agregar Receta</a>
+    <a href="/recipes/RecetaCreate/" class="add-receta">Agregar Receta</a>
+    <a href="" data-form="/recipes/RecetaCreateNamed/" class="add-recipe2">Agregar Receta ajax</a>
     <div id="recipeForm"></div>
 
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.1.10.2.js"></script>
-<!-- <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script> -->
+<script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
 </body>
 </html>

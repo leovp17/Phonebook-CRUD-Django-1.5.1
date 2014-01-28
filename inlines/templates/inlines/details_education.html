@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div id="render_education">
+    <div class="col">
+        <a href="javascript:void(0)" class="edit" id="id_education_edit">edit</a>
+        <div id="render_education_container">{% include 'candidate/details/details_education.html' %}</div>
+
+
+        <!--Despliega el formulario-->
+        <ul class="education-list">
+            <h2>Antecedentes académicos</h2>
+        <input type="hidden" id="candidato" value="{{ w_candidato.id }}">
+            {% for estudio  in  w_candidato.formacion_set.all %}
+                <li>
+                    <h3>{{ estudio.field_of_study }}</h3>
+                    <span class="university">{{ estudio.school_name }}</span>
+                                        <span class="period">
+                                            {% if estudio %}
+
+                                                {{ estudio.start_date }}
+
+                                                -
+                                                {{ estudio.end_date }}
+
+
+                                            {% endif %}
+
+                                        </span>
+                </li>
+
+            {% endfor %}
+        </ul>
+        <div id="render_formeducation">
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

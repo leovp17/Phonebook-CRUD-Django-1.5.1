@@ -1,15 +1,14 @@
 # views.py
 import json
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.template.loader import render_to_string
-from django.views.generic import CreateView, UpdateView
 from django.views.generic.list import ListView
-from extra_views import InlineFormSet, CreateWithInlinesView, UpdateWithInlinesView, InlineFormSetView, \
+from extra_views import InlineFormSet, CreateWithInlinesView, UpdateWithInlinesView, \
     NamedFormsetsMixin
 
-from .forms import IngredientFormSet, InstructionFormSet, RecipeForm
+from .forms import RecipeForm, IngredientForm, InstructionForm, RecipeFormAjax, IngredientFormSet, InstructionFormSet
 from .models import Recipe, Ingredient, Instruction
 
 
@@ -17,13 +16,6 @@ from .models import Recipe, Ingredient, Instruction
     Django-extra-views
     DOCS: http://django-extra-views.readthedocs.org/en/latest/views.html
 """
-
-
-class RecetaFormSetView(InlineFormSetView):
-    model = Recipe
-    inline_model = Ingredient
-    template_name = "recipes/receta_inline_formset.html"
-
 
 class IngredientInline(InlineFormSet):
     model = Ingredient
@@ -48,12 +40,13 @@ class RecetaCreateView(CreateWithInlinesView):
     template_name = 'recipes/receta_add.html'
 
     def get_success_url(self):
-        return '../%i' % self.object.pk
+        return '../RecetaDetail/%i' % self.object.slug
 
 
-class RecetaCreateNamedView(NamedFormsetsMixin, RecetaCreateView):
-    inlines_names = ['ingredientes','instrucciones']
-    template_name = 'recipes/receta_add_namedFormsets.html'
+class RecetaCreateViewAjax(CreateWithInlinesView):
+    model = Recipe
+    inlines = [IngredientInline, InstructionInline]
+    template_name = 'recipes/receta_add.html'
 
 
 class RecetaUpdateView(UpdateWithInlinesView):
@@ -63,143 +56,31 @@ class RecetaUpdateView(UpdateWithInlinesView):
     template_name = 'recipes/receta_add.html'
 
     def get_success_url(self):
-        return '../../%i' % self.object.pk
+        return '../../%i' % self.object.slug
 
 
 class RecetaUpdateNamedView(NamedFormsetsMixin, RecetaUpdateView):
     inlines_names = ['ingredientes','instrucciones']
     template_name = 'recipes/receta_add_namedFormsets.html'
 
-    def get_success_url(self):
-        return '../../%i' % self.object.pk
-
-    #def get_success_url(self):
-        #return self.object.get_absolute_url()
+    """def get_success_url(self):
+        return '../../RecetaDetail/%i' % self.object.slug"""
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#todo LV En este view se utiliza para desplegar el formulario, usando la forma tradicional, una pagina para el form con un success url.
-class RecipeCreateView(CreateView):
-    template_name = 'recipes/recipe_add.html'
+class RecetaMixin(object):
     model = Recipe
-    form_class = RecipeForm
-    success_url = '/recipes/'
-
-    def get(self, request, *args, **kwargs):
-        """
-        Handles GET requests and instantiates blank versions of the form
-        and its inline formsets.
-        """
-        self.object = None
-        form_class = self.get_form_class()
-        form = self.get_form(form_class)
-        ingredient_form = IngredientFormSet()
-        instruction_form = InstructionFormSet()
-        return self.render_to_response(
-            self.get_context_data(form=form,
-                                  ingredient_form=ingredient_form,
-                                  instruction_form=instruction_form))
-
-    def post(self, request, *args, **kwargs):
-        """
-        Handles POST requests, instantiating a form instance and its inline
-        formsets with the passed POST variables and then checking them for
-        validity.
-        """
-        self.object = None
-        form_class = self.get_form_class()
-        form = self.get_form(form_class)
-        ingredient_form = IngredientFormSet(self.request.POST)
-        instruction_form = InstructionFormSet(self.request.POST)
-        if (form.is_valid() and ingredient_form.is_valid() and
-            instruction_form.is_valid()):
-            return self.form_valid(form, ingredient_form, instruction_form)
-        else:
-            return self.form_invalid(form, ingredient_form, instruction_form)
-
-    def form_valid(self, form, ingredient_form, instruction_form):
-        """
-        Called if all forms are valid. Creates a Recipe instance along with
-        associated Ingredients and Instructions and then redirects to a
-        success page.
-        """
-        self.object = form.save()
-        ingredient_form.instance = self.object
-        ingredient_form.save()
-        instruction_form.instance = self.object
-        instruction_form.save()
-        return HttpResponseRedirect(self.get_success_url())
-
-    def form_invalid(self, form, ingredient_form, instruction_form):
-        """
-        Called if a form is invalid. Re-renders the context data with the
-        data-filled forms and errors.
-        """
-        return self.render_to_response(
-            self.get_context_data(form=form,
-                                  ingredient_form=ingredient_form,
-                                  instruction_form=instruction_form))
-
-
-class RecipeMixin(object):
-    model = Recipe
-    ingredient_form = IngredientFormSet()
-    instruction_form = InstructionFormSet()
+    inlines = [IngredientInline, InstructionInline]
 
     def get_context_data(self, **kwargs):
-        kwargs.update({'object_name': 'Receta'})
+        kwargs.update({'object_name': 'Recetas'})
         return kwargs
 
 
-class RecipeFormMixin(RecipeMixin):
-    form_class = RecipeForm
-    ingredient_form = IngredientFormSet()
-    instruction_form = InstructionFormSet()
-    template_name = 'recipes/recipe_add.html'
-
-
-class RecipeUpdate(RecipeFormMixin, UpdateView):
-    pass
-
-
-#todo LV Estos mixin se empiezan usar para trabajar con las vistas genericas, en este caso lo que capturamos son las diferentes recetas almacenadas en la base de datos
-
-
-
-class RecipeList(RecipeMixin, ListView):
+class RecetaList(RecetaMixin, ListView):
     template_name = 'recipes/recipe_list.html'
 
-#todo LV Estos mixin se empiezan usar para trabajar con las vistas genericas, en este caso lo que capturamos es el detalle de la receta almacenada en la base de datos
 
-# class RecipeDetailMixin(object):
-#     model = Recipe
-#
-#
-#     def get_context_data(self, **kwargs):
-#          kwargs.update({'object_name': 'Recipe'})
-#          return kwargs
-#
-#
-# class RecipeDetailNull(RecipeDetailMixin, DetailView):
-#     pass
-
-def RecipeDetail(request, slug):
+def RecetaDetail(request, slug):
 
     recetas = Recipe.objects.get(slug=slug)
     id = recetas.id
@@ -208,6 +89,13 @@ def RecipeDetail(request, slug):
     instruction = Instruction.objects.filter(recipe_id__exact=id)
 
     return render_to_response('recipes/recipe_detail.html', locals(), RequestContext(request))
+
+
+
+class RecetaCreateNamedView(NamedFormsetsMixin, RecetaCreateView):
+    inlines_names = ['ingredientes','instrucciones']
+    template_name = 'recipes/receta_add_namedFormsets.html'
+
 
 #todo LV aqui configuramos el ajax request, aqui es donde se trabaja toda la funcionalidad del formulario sin que sea persivido por el usuario.
 def enterRecipe(request):
@@ -225,16 +113,20 @@ def enterRecipe(request):
             instruction_form = InstructionFormSet(request.POST, instance=recipeform)
             if ingredient_form.is_valid() and instruction_form.is_valid():
 
-
                 form.save()
                 ingredient_form.save()
                 instruction_form.save()
+            else:
+                jres['status'] = 'novalido'
+                salida = render_to_string('recipes/receta_add_namedFormsets.html', locals(), RequestContext(request))
+                jres['data'] = salida
+                print("algo no esta validado")
         else:
             try:
 
                 ingredient_form = IngredientFormSet(request.POST)
                 instruction_form = InstructionFormSet(request.POST)
-                salida = render_to_string('recipes/recipe_add.html', locals(), RequestContext(request))
+                salida = render_to_string('recipes/receta_add_namedFormsets.html', locals(), RequestContext(request))
                 jres['data'] = salida
                 jres['status'] = 'novalido'
                 return HttpResponse(json.dumps(jres))

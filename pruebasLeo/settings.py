@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'polls',
     'recipes',
     'extra_views',
+    'inlines',
 )
 
 # A sample logging configuration. The only tangible logging

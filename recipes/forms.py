@@ -1,6 +1,7 @@
 # forms.py
 from django import forms
 from django.forms.models import inlineformset_factory
+from django.template.defaultfilters import slugify
 
 from .models import Recipe, Ingredient, Instruction
 
@@ -16,11 +17,19 @@ class RecipeForm(forms.ModelForm):
     def save(self, commit=True):
         instance = super(RecipeForm, self).save(commit=commit)
 
+
         if commit:
             instance.action_on_save = True
             instance.save()
 
         return instance
+
+class RecipeFormAjax(forms.ModelForm):
+    class Meta:
+        model = Recipe
+
+    #def __init__(self, *args, **kwargs):
+        #super(RecipeForm, self).__init__(*args, **kwargs)
 
 
 class IngredientForm(forms.ModelForm):
@@ -31,8 +40,6 @@ class IngredientForm(forms.ModelForm):
 class InstructionForm(forms.ModelForm):
     class Meta:
         model = Instruction
-
-#todo LV Estos son los inlineformset, aqui se ligan los dos formularios secundarios al principal.
 
 IngredientFormSet = inlineformset_factory(Recipe, Ingredient)
 

@@ -12,27 +12,43 @@
 
         <h1>Agregar Receta</h1>
         <p>El formulario consiste en: crear una receta que cuenta con un titulo y una descripción, a la cual tambien se le ligan dos formularios mas, uno de ingredientes y otro con las instrucciones.</p>
-        <form action="." method="post">
+        <form action="/enterRecipe/" method="post">
             {% csrf_token %}
+            {{form.id}}
             <div>
-                {{ form }}
+                <dl>
+                    <dt>{{ form.title.label }}:</dt>
+                    <dd>{{ form.title }}</dd>
+                    <dt>{{ form.description.label }}:</dt>
+                    <dd>{{ form.description }}</dd>
+                </dl>
+
             </div>
+            <h2>Ingredientes</h2>
             <fieldset>
             {{ ingredientes.management_form }}
             {% for formset in ingredientes %}
-
+                {{formset.id}}
                 <div class="inlineIngredientes {{ formset.prefix }}">
-                    {{ formset }}
+                    <dl>
+                        <dt>{{ formset.description.label }}:</dt>
+                        <dd>{{ formset.description }}</dd>
+                    </dl>
                 </div>
             {% endfor %}
             </fieldset>
-
+            <h2>Instrucciones</h2>
             <fieldset>
             {{ instrucciones.management_form }}
             {% for formset in instrucciones %}
-
+                {{formset.id}}
                 <div class="inlineInstrucciones {{ formset.prefix }}">
-                    {{ formset }}
+                    <dl>
+                        <dt>{{ formset.number.label }}:</dt>
+                        <dd>{{ formset.number }}</dd>
+                        <dt>{{ formset.description.label }}:</dt>
+                        <dd>{{ formset.description }}</dd>
+                    </dl>
                 </div>
             {% endfor %}
             </fieldset>
@@ -47,11 +63,13 @@
     $(function() {
         $('.inlineIngredientes').formset({
             prefix: '{{ ingredientes.prefix }}',
-            addText: 'Agregar campo'
+            addText: 'Agregar campo',
+            deleteText: 'Eliminar',
         });
         $('.inlineInstrucciones').formset({
             prefix: '{{ instrucciones.prefix }}',
-            addText: 'Agregar campo'
+            addText: 'Agregar campo',
+            deleteText: 'Eliminar',
         });
     })
 </script>

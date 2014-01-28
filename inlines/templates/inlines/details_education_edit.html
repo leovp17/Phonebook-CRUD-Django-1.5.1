@@ -1,0 +1,74 @@
+<div class="col">
+    <form id="formeducation" method="post" action="/enter_edu/" class="selection-form" accept-charset="utf-8">
+        <input type="hidden" name="candidato" value="{{ w_candidato.id }}">
+        <table border="0" cellpadding="0" cellspacing="0" style=" width: 570px; ">
+            <tbody>
+            {{ formularioeducacion.management_form }}
+            {% for formset in formularioeducacion %}
+                <tr class="inline" id="{{ formset.prefix }}-row">
+                    <td>
+                        <span class="to">&nbsp;&nbsp;</span>
+                        {{ formset.DELETE }}
+                        {{ formset.id }}
+                        <div class="input-holder-edu">
+                            <label for="fecha" class="labeledu">Carrera<span>nombre de la carrera</span></label>
+                            <dd>{{ formset.field_of_study }}</dd>
+                            <dd>
+                                <div class="errorx"> {{ formset.field_of_study.errors.as_text }}</div>
+                            </dd>
+                            <br>
+                        </div>
+
+
+                        <div class="input-holder-edu">
+                            <label for="institucion" class="labeledu">Institución<span></span></label>
+                            <dd>{{ formset.school_name }}</dd>
+                            <dd>
+                                <div class="errorx"> {{ formset.school_name.errors.as_text }}</div>
+                            </dd>
+                            <br>
+                        </div>
+
+                        <div class="input-holder-edu">
+                            <label for="inicio" class="labeledu2">Fechas de estudios</label>
+                            <dd>{{ formset.start_date }}<span class="to">&nbsp;–&nbsp;</span>{{ formset.end_date }}
+                            </dd>
+                            <dd>
+                                <div class="errorx"> {{ formset.start_date.errors.as_text }}</div>
+                            </dd>
+                            <dd>
+                                <div class="errorx"> {{ formset.end_date.errors.as_text }}</div>
+                            </dd>
+                        </div>
+
+
+                    </td>
+                    <span class="to">&nbsp;&nbsp;</span>
+                </tr>
+                <span class="to">&nbsp;&nbsp;</span>
+
+            {% endfor %}
+            <span class="to">&nbsp;&nbsp;</span>
+            </tbody>
+        </table>
+
+        <input type="submit" class="BtnComplete6 margin50" value="Grabar">
+        <input type="button" class="BtnComplete6" value="Cancelar" onclick="close_id('formeducation')">
+    </form>
+
+
+</div>
+<script type="text/javascript">
+   function formset_edu() {
+
+        $('.inline').formset({
+            prefix: '{{ formularioeducacion.prefix }}',
+            addText: 'Agregar Formacion',
+            deleteText: 'Borrar Formacion'
+        })
+    }
+
+
+</script>
+<!-- basic fancybox setup -->
+

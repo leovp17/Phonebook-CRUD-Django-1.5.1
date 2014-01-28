@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     //Se agrega funcionalidad a btn para insertar formulario en la pagina /recipe/
 
-    $(".add-recipe").click(function(e) { // for each edit contact url
+    $(".add-recipe2").click(function(e) { // for each edit contact url
         e.preventDefault(); // prevent navigation
         var url = $(this).data("form"); // get the contact form url
         $("#recipeForm").load(url);

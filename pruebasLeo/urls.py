@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+from inlines.views import enter_edu, show_edu
 from micrud.views import enter
 from recipes.views import enterRecipe
 
@@ -17,6 +18,7 @@ urlpatterns = patterns('',
     url(r'^polls/', include('polls.urls', namespace="polls")),
     url(r'^recipes/', include('recipes.urls', namespace="recipes")),
     url(r'^extraviews/', include('extra_views.tests.urls', namespace="extraviews")),
+    url(r'^inlines/', include('inlines.urls', namespace="inlines")),
 
 
 
@@ -28,4 +30,7 @@ urlpatterns = patterns('',
 
     url(r'^enter/', enter),
     url(r'^enterRecipe/', enterRecipe),
+
+    url(r'^enter_edu/', enter_edu),
+    url(r'^show_edu/', show_edu),
 )

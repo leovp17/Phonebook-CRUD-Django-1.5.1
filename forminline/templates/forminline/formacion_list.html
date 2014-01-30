@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="row">
+        <div class="object"><h2>{{object_name}}</h2></div>
+        <div class="options"><h2>Action</h2></div>
+    </div>
+    {% for object in object_list %}
+    <div class="row">
+        <div class="object"><a href="{{ object.get_absolute_url }}">{{object.title}}</a></div>
+        <div class="options"><a href="{{object.get_update_url}}">Update</a> | <a href="{{object.get_delete_url}}">Delete</a></div>
+    </div>
+    {% endfor %}
+</body>
+</html>

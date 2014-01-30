@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'recipes',
     'extra_views',
     'inlines',
+    'forminline',
 )
 
 # A sample logging configuration. The only tangible logging

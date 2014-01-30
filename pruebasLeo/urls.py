@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^recipes/', include('recipes.urls', namespace="recipes")),
     url(r'^extraviews/', include('extra_views.tests.urls', namespace="extraviews")),
     url(r'^inlines/', include('inlines.urls', namespace="inlines")),
+    url(r'^forminline/', include('forminline.urls', namespace="forminline")),
 
 
 

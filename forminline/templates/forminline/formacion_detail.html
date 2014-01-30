@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+        <div class="row">
+            <div class="object">Full name:</div>
+            <div class="options">{{object.title}}</div>
+        </div>
+        {% if object.description %}
+        <div class="row">
+            <div class="object">description:</div>
+            <div class="options">{{object.description}}</div>
+        </div>
+        {% endif %}
+        {% if object.estudio_set.description %}
+        <div class="row">
+            <div class="object">description:</div>
+            <div class="options">{{object.estudio_set.description}}</div>
+        </div>
+        {% endif %}
+        <div class="row">
+            <div class="object"></div>
+            <div class="options"></div>
+        </div>
+        <a href="{{object.get_update_url}}">Update</a> | <a href="{{object.get_delete_url}}">Delete</a>
+</body>
+</html>

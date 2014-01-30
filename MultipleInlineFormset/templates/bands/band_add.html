@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bands Demo</title>
+    <script src="{{ STATIC_URL }}/js/jquery-1.11.0.min.js"></script>
+    <script src="{{ STATIC_URL }}/js/jquery.formset.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $(".inline.{{ album_form.prefix }}").formset({
+                prefix: "{{ album_form.prefix }}"
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1>Add Band</h1>
+        <form action="." method="post">
+            {% csrf_token %}
+            <div>
+                {{ band_form.as_p }}
+            </div>
+            <fieldset>
+                <legend>Albums</legend>
+                {{ album_form.management_form }}
+                {{ album_form.non_form_errors }}
+                {% for form in album_form %}
+                    {{ form.id }}
+                    <div class="inline {{ album_form.prefix }}">
+                        {{ form.name.errors }}
+                        {{ form.name.label_tag }}
+                        {{ form.name }}
+                        {{ form.DELETE }}
+                    </div>
+                {% endfor %}
+            </fieldset>
+            <input type="submit" value="Add Album" class="submit" />
+        </form>
+    </div>
+</body>
+</html>

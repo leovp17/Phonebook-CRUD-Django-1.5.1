@@ -19,6 +19,8 @@ urlpatterns = patterns('',
     url(r'^recipes/', include('recipes.urls', namespace="recipes")),
     url(r'^extraviews/', include('extra_views.tests.urls', namespace="extraviews")),
     url(r'^inlines/', include('inlines.urls', namespace="inlines")),
+    url(r'^mif/', include('MultipleInlineFormset.urls', namespace="mif")),
+    #url(r'^musicapi/',include('musicapi.urls',namespace='musicapi')),
     url(r'^forminline/', include('forminline.urls', namespace="forminline")),
 
 

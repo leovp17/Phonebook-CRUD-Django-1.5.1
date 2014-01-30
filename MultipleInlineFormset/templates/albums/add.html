@@ -1,0 +1,9 @@
+<h1>Agregar Album</h1>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'mif:albumAdd' band.id %}" method="post">
+    {% csrf_token %}
+    <label for="name">Nombre</label><input type="text" name="name"/><br/>
+    <p>Banda: <a href="/mif/band/view/{{ band.id }}">{{ band.name }}</a></p>
+    <input type="submit" value="Agregar"/>
+</form>

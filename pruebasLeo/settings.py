@@ -131,6 +131,9 @@ INSTALLED_APPS = (
     'recipes',
     'extra_views',
     'inlines',
+    'MultipleInlineFormset',
+    #'musicapi',
+
     'forminline',
 )
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bands Demo</title>
+</head>
+
+<body>
+    {% block title %}{{object_name}} Confirm delete?{% endblock %}
+
+    {% block content %}
+
+    <div class="table">
+
+        <h2>Are you sure you want to delete {{object}}?</h2>
+
+        <div class="row">
+            <form action="" method="post">{% csrf_token %}
+                <input type="submit" value="Yes!"/>  <input type="button" value="No..." onclick="window.history.go(-1);"/>
+            </form>
+        </div>
+
+    </div>
+
+    {% endblock %}
+
+</body>
+</html>

@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView
 
-from .forms import BandForm, AlbumFormSet
+from .forms import BandForm, AlbumFormSet, CommentFormSet
 from .models import Band
 
 
@@ -96,9 +96,12 @@ class BandFormMixin(BandMixin):
         #info POM forms inline buscan modelos asociados a la instancia padre
         album_form = AlbumFormSet(instance=self.object)
 
+        comment_form = CommentFormSet(instance=self.object)
+
         return self.render_to_response(
             self.get_context_data(band_form=band_form,
-                                  album_form=album_form))
+                                  album_form=album_form,
+                                  comment_form=comment_form))
 
     def post(self, request, pk=None, *args, **kwargs):
         """
@@ -115,12 +118,15 @@ class BandFormMixin(BandMixin):
         band_form = self.get_form(form_class)
 
         album_form = AlbumFormSet(self.request.POST, instance=self.object)
-        if (band_form.is_valid() and album_form.is_valid()):
-            return self.form_valid(band_form, album_form)
-        else:
-            return self.form_invalid(band_form, album_form)
 
-    def form_valid(self, band_form, album_form):
+        comment_form = CommentFormSet(self.request.POST, instance=self.object)
+
+        if (band_form.is_valid() and album_form.is_valid() and comment_form.is_valid()):
+            return self.form_valid(band_form, album_form, comment_form)
+        else:
+            return self.form_invalid(band_form, album_form, comment_form)
+
+    def form_valid(self, band_form, album_form, comment_form):
         """
         Called if all forms are valid. Creates a Recipe instance along with
         associated Ingredients and Instructions and then redirects to a
@@ -129,16 +135,19 @@ class BandFormMixin(BandMixin):
         self.object = band_form.save()
         album_form.instance = self.object
         album_form.save()
+        comment_form.instance = self.object
+        comment_form.save()
         return HttpResponseRedirect(self.get_success_url())
 
-    def form_invalid(self, band_form, album_form):
+    def form_invalid(self, band_form, album_form, comment_form):
         """
         Called if a form is invalid. Re-renders the context data with the
         data-filled forms and errors.
         """
         return self.render_to_response(
             self.get_context_data(band_form=band_form,
-                                  album_form=album_form))
+                                  album_form=album_form,
+                                  comment_form=comment_form))
 
 
 class BandCreate(BandFormMixin, CreateView):

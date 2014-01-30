@@ -8,6 +8,9 @@
         $(function() {
             $(".inline.{{ album_form.prefix }}").formset({
                 prefix: "{{ album_form.prefix }}"
+            });
+             $(".inlinecomment.{{ comment_form.prefix }}").formset({
+                prefix: "{{ comment_form.prefix }}"
             })
         })
     </script>
@@ -31,6 +34,24 @@
                         {{ form.name.errors }}
                         {{ form.name.label_tag }}
                         {{ form.name }}
+                        {# si no pones el form.DELETE no se borra el campo, solo se oculta y la validacion falla #}
+                        {{ form.DELETE }}
+                    </div>
+                {% endfor %}
+            </fieldset>
+            <fieldset>
+                <legend>Comments</legend>
+                {{ comment_form.management_form }}
+                {{ comment_form.non_form_errors }}
+                {% for form in comment_form %}
+                    {{ form.id }}
+                    <div class="inlinecomment {{ comment_form.prefix }}">
+                        {{ form.username.errors }}
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                        {{ form.comment.errors }}
+                        {{ form.comment.label_tag }}
+                        {{ form.comment }}
                         {{ form.DELETE }}
                     </div>
                 {% endfor %}

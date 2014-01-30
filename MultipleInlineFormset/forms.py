@@ -4,7 +4,7 @@
 from django.forms import ModelForm
 from django.forms.models import inlineformset_factory
 
-from .models import Band, Album
+from .models import Band, Album, Comment
 
 
 class BandForm(ModelForm):
@@ -13,4 +13,4 @@ class BandForm(ModelForm):
 
 
 AlbumFormSet = inlineformset_factory(Band, Album)
-#CommentFormSet = inlineformset_factory(Band, Comment)
+CommentFormSet = inlineformset_factory(Band, Comment)

@@ -32,14 +32,13 @@ class Band(models.Model):
         return 'mif:band_delete', [self.id]
 
 
+class Comment(models.Model):
+    def __unicode__(self):
+        return slugify(self.comment)
 
-# class Comment(models.Model):
-#     def __unicode__(self):
-#         return slugify(self.comment)
-#
-#     username = models.CharField(max_length=200, blank=True)
-#     comment = models.CharField(max_length=500)
-#     band = models.ForeignKey(Band)
+    username = models.CharField(max_length=200, default=None, null=True)
+    comment = models.CharField(max_length=500)
+    band = models.ForeignKey(Band)
 
 
 class Album(models.Model):

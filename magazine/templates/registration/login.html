@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Noticias Demo</title>
+    {% load bootstrap3 %}
+    {% bootstrap_css %} {% bootstrap_javascript %}
+    <style>
+        body {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+    </style>
+</head>
+
+{% load i18n %}
+<div class="container" id="wrapcontent">
+    <h1>Login</h1>
+
+
+    {% if next == None or next == "" %}
+        <form action="/accounts/login/" method="post" class="form">
+    {% else %}
+        <form action="/accounts/login/?next={{ next }}" method="post" class="form">
+    {% endif %}
+        {{ auth_form.non_field_errors }}
+        <p>
+            {{ auth_form.username.errors }}
+            <label for="id_username">{% trans "Username" %}:</label>
+            <input type="text" name="username" id="id_username" class="form-control">
+        </p>
+
+        <p>
+            {{ auth_form.password.errors }}
+            <label for="id_password">{% trans "Password" %}:</label>
+            <input type="password" name="password" class="form-control" id="id_password">
+        </p>
+
+        <p>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+            <input type="hidden" name="next" value="{{ next }}">
+            <button type="submit" class="btn btn-primary">
+                {% trans "Log in" %}
+            </button>
+
+        </p>
+    </form>
+</div>
+

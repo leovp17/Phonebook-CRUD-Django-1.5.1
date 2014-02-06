@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bands Demo</title>
+    <script src="{{ STATIC_URL }}/js/jquery-1.11.0.min.js"></script>
+    <script src="{{ STATIC_URL }}/js/jquery.formset.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Add Band</h1>
+        <form action="." method="post">
+            {% csrf_token %}
+            <div>
+                {{ genre_form.as_p }}
+            </div>
+            <input type="submit" value="Add Genre" class="submit" />
+        </form>
+    </div>
+</body>
+</html>

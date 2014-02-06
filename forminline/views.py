@@ -4,14 +4,14 @@ __author__ = 'leovega'
 from django.http import HttpResponseRedirect
 from django.views.generic import CreateView, ListView, UpdateView, DetailView
 
-from .forms import EstudioFormSet, EstudioForm
+from .forms import EstudioFormSet, FormacionForm
 from .models import Formacion
 
 
 class FormacionCreateView(CreateView):
     template_name = 'forminline/formacion_add.html'
     model = Formacion
-    form_class = EstudioForm
+    form_class = FormacionForm
     success_url = '/forminline/'
 
     def get(self, request, *args, **kwargs):
@@ -72,7 +72,7 @@ class FormacionMixin(object):
 
 
 class FormacionFormMixin(FormacionMixin):
-    form_class = EstudioForm
+    form_class = FormacionForm
     template_name = 'forminline/formacion_add.html'
 
 

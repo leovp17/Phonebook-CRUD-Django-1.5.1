@@ -6,7 +6,6 @@ from django.contrib import admin
 from inlines.views import enter_edu, show_edu
 from micrud.views import enter
 from recipes.views import enterRecipe
-
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -22,11 +21,11 @@ urlpatterns = patterns('',
     url(r'^mif/', include('MultipleInlineFormset.urls', namespace="mif")),
     #url(r'^musicapi/',include('musicapi.urls',namespace='musicapi')),
     url(r'^forminline/', include('forminline.urls', namespace="forminline")),
+    url(r'^magazine/', include('magazine.urls', namespace="magazine")),
 
+    url(r'^accounts/login/$','django.contrib.auth.views.login',{'template_name': 'registration/login.html'}),
+    url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/magazine/index'}),
 
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),

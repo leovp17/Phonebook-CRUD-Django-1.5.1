@@ -1,0 +1,22 @@
+{% include 'common/head.html' %}
+<div class="container" id="wrapcontent">
+    <h3>Noticias</h3>
+    {% for object in object_list %}
+        <div class="panel panel-primary news-entry">
+            <div class="panel-heading">{{ object.title }}</div>
+            <div class="panel-body">
+                {{ object.noticia }}
+            </div>
+        </div>
+    {% empty %}
+        <div class="panel panel-danger news-entry">
+            <div class="panel-heading">Cuidado</div>
+            <div class="panel-body">
+                No hay noticias registradas. Puedes agregar una <a href="{% url 'magazine:noticia_add' %}">aqui</a>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+</body>
+</html>

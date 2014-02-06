@@ -1,0 +1,49 @@
+{% include 'common/head.html' %}
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Magazine Demo</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam, nunc eu malesuada mattis, tellus
+            felis sagittis tortor, ut gravida elit quam sit amet sapien. Pellentesque at erat nulla. Morbi non leo eu
+            nisl adipiscing congue sed tincidunt odio. Cras ut tincidunt mi. Cras at fringilla metus. Phasellus vitae
+            mollis odio. Duis semper eu nulla id egestas. Suspendisse placerat at orci convallis sollicitudin. Quisque
+            eleifend, urna eu laoreet sodales, nulla diam eleifend nisl, ut bibendum lectus ante nec neque. Donec
+            gravida scelerisque euismod. Morbi turpis urna, tincidunt nec egestas id, consequat nec orci. Donec mollis
+            turpis diam, in ultricies diam gravida in. Morbi volutpat lectus sit amet auctor fermentum.</p>
+
+        <p><a class="btn btn-primary btn-lg" role="button" href="{% url 'magazine:noticia_list' %}">Ver noticias</a></p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Reporteros</h2>
+
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                euismod. Donec sed odio dui.</p>
+
+            <p><a class="btn btn-default" href="{% url 'magazine:reportero_list' %}" role="button">Ver Reporteros</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Editores</h2>
+
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                euismod. Donec sed odio dui.</p>
+
+            <p><a class="btn btn-default" href="{% url 'magazine:editor_list' %}" role="button">Ver Editores</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Directores</h2>
+
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                euismod. Donec sed odio dui.</p>
+
+            <p><a class="btn btn-default" href="{% url 'magazine:director_list' %}" role="button">Ver Directores</a></p>
+        </div>
+    </div>
+</div>

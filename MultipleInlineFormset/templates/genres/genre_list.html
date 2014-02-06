@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Géneros</title>
+</head>
+<body>
+    <div class="row">
+        <div class="object"><h2>{{object_name}}</h2></div>
+        <div class="options"><h2>Action</h2></div>
+        <div class="action"><small><a href="{% url 'mif:genre_add' %}">Add a new one</a></small></div><br/>
+    </div>
+    {% for object in object_list %}
+    <div class="row">
+        <div class="object" style="font-size: 1.2em;"><a href="{{ object.get_absolute_url }}">{{object.name}}</a></div>
+        <div class="options"><a href="{{object.get_update_url}}">Update</a> | <a href="{{object.get_delete_url}}">Delete</a></div>
+    </div><hr style="float:left;width:25%"/><div style="clear:both"></div>
+    {% endfor %}
+</body>
+</html>

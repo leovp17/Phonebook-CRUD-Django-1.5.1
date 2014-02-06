@@ -1,0 +1,18 @@
+{% load bootstrap3 %}
+{% include 'common/head.html' %}
+<div class="container" id="wrapcontent">
+    <h3>Agregar Reportero</h3>
+
+    <form action="." method="post" class="form">
+        {% csrf_token %}
+        <div>
+            {% bootstrap_form reportero_form %}
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Agregar
+        </button>
+
+    </form>
+</div>
+</body>
+</html>

@@ -7,7 +7,7 @@ from django.forms.models import inlineformset_factory
 from .models import Formacion, Estudio
 
 
-class EstudioForm(ModelForm):
+class FormacionForm(ModelForm):
     class Meta:
         model = Formacion
 

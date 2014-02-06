@@ -112,7 +112,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 
-    '/Users/Leovega/PycharmProjects/pruebasLeo/templates', # Change this to your own directory.
+    #'/Users/Leovega/PycharmProjects/pruebasLeo/templates', # Change this to your own directory.
 )
 
 INSTALLED_APPS = (
@@ -132,9 +132,11 @@ INSTALLED_APPS = (
     'extra_views',
     'inlines',
     'MultipleInlineFormset',
-    #'musicapi',
-
+    'bootstrap3',
     'forminline',
+    'rbac',
+    'magazine',
+    'south'
 )
 
 # A sample logging configuration. The only tangible logging

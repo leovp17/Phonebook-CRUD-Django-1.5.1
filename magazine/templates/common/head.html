@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Noticias Demo</title>
+    <script src="{{ STATIC_URL }}js/jquery-1.11.0.min.js"></script>
+    {% load bootstrap3 %}
+    {% bootstrap_css %} {% bootstrap_javascript %}
+    <style>
+        body {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        #wrapcontent {
+            margin-top: 70px;
+        }
+    </style>
+</head>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'magazine:index' %}">Magazine Demo</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'magazine:noticia_list' %}">Noticias</a></li>
+                <li><a href="{% url 'magazine:reportero_list' %}">Reporteros</a></li>
+                <li><a href="{% url 'magazine:editor_list' %}">Editores</a></li>
+                <li><a href="{% url 'magazine:director_list' %}">Directores</a></li>
+            </ul>
+            {% if user.is_authenticated %}
+                <div class="navbar-collapse collapse">
+                    <div class="navbar-right">
+                        <p class="navbar-text">Hola {{ user.username }}</p>
+
+                        <p class="navbar-text"><a href="/logout">Logout</a></p>
+                    </div>
+                </div>
+            {% else %}
+                <div class="navbar-collapse collapse">
+                    <div class="navbar-right">
+                        <p class="navbar-text"><a href="/accounts/login/?next={% url 'magazine:index' %}">Login</a></p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -136,7 +136,8 @@ INSTALLED_APPS = (
     'forminline',
     'rbac',
     'magazine',
-    'south'
+    'south',
+    'linkedin_demo'
 )
 
 # A sample logging configuration. The only tangible logging

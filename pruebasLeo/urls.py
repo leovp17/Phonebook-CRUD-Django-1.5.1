@@ -27,6 +27,8 @@ urlpatterns = patterns('',
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/magazine/index'}),
 
 
+    url(r'linkedin/', include('linkedin_demo.urls', namespace="linkedin")),
+
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 

@@ -1,0 +1,21 @@
+<ul>
+    <li>Headline: <b>{{ profile.headline }}</b></li>
+    <li>firstName: <b>{{ profile.firstName }}</b></li>
+    <li>lastName: <b>{{ profile.lastName }}</b></li>
+    <li>location: <b>{{ profile.location.name }}</b></li>
+    <li>Skills:</li>
+    <ul>
+        {% for hab in profile.skills.values %}
+            <li>{{ hab.skill.name }}</li>
+        {% endfor %}
+    </ul>
+    <li>Connections</li>
+    <ul>
+        {% for conn in connections.values %}
+            <li><a href="{{ apiStandardProfileRequest.url }}" target="_blank">{{ conn.firstName }}{{ conn.lastName }}({{ conn.headline }})</a></li>
+        {% endfor %}
+    </ul>
+</ul>
+
+
+{% debug %}
